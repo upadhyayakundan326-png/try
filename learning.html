@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LocalStorage Simple Demo</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #1e1e2f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+    }
+
+    .box {
+      background: #2c2c3c;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background: #00c9a7;
+      border: none;
+      color: white;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>🔥 Save Name</h2>
+
+  <input id="nameInput" placeholder="Enter name">
+  <button onclick="saveName()">Save</button>
+
+  <p id="showName"></p>
+
+</div>
+
+<script>
+
+// save name
+function saveName() {
+  let name = document.getElementById("nameInput").value;
+
+  localStorage.setItem("username", name);
+
+  showName();
+}
+
+// show name on load
+function showName() {
+  let name = localStorage.getItem("username");
+
+  if (name) {
+    document.getElementById("showName").innerText = "Hello " + name;
+  }
+}
+
+// page load pe run
+showName();
+
+</script>
+
+</body>
+</html>

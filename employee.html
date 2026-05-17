@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+        }
+       .btn{
+        padding: 5px;
+        border-radius: 50px;
+        border:3px solid rgb(0, 128, 105);
+        text-transform: capitalize;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        text-align:center;
+        display: block;
+         margin: 20px auto;
+
+}
+.employee li{
+color:aliceblue;
+margin-top: 20px;
+}
+
+        
+
+       
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;color:white">holiday list</h2>
+    <hr>
+
+    <ol class="employee">
+        
+    </ol>
+    <input type="text" id="employeename" placeholder="enter name ">
+    <input type="text"id="holiday" placeholder="enter your holiday">
+    <br>
+    <button class="btn" onclick="showholiday()">holiday</button>
+
+    
+</body>
+
+</html>
+<script>
+    function employeedetail(text){
+        let lines= document.createElement("li")
+        lines.innerText=text
+        
+        document.querySelector(".employee").append(lines)
+    }
+    function showholiday(){
+        console.log("button clicked")
+      let emp=document.querySelector("#employeename").value
+      let hol=document.querySelector("#holiday").value
+      
+      if(emp===""||hol===""){
+      console.log("need to fill two")
+    alert("fill both")
+    return;
+      }
+      employeedetail(emp+" ---"+hol)
+      document.querySelector("#employeename").value=""
+      document.querySelector("#holiday").value=""
+
+    }
+
+
+ 
+</script>

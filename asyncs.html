@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4> Bgc need to chaneg in every seconds</h4>
+    <button id="btn1">start</button>
+    <button id="btn2">stop</button>
+
+
+    
+</body>
+</html>
+<script>
+    let btn1=document.querySelector("#btn1")
+
+    let btn2=document.querySelector("#btn2")
+      let rand=function (){
+          let hex="0123456789ABCDEF"
+          let color="#"
+          for(let i=0;i<6;i++){
+            color+=hex[Math.floor(Math.random()*15)]
+           
+          }
+          return color;
+            console.log(color)
+    }
+    let set= function(){
+        document.body.style.backgroundColor=rand()
+    } 
+    let setintervl;
+    function code(){
+    setintervl=setInterval(set,1000)}
+    function decode(){
+        clearInterval(setintervl)
+    }
+    btn1.addEventListener("click",code)
+    btn2.addEventListener("click",decode)
+    document.addEventListener("keyup",function(e){
+        if(e.key==="Enter"){
+            code();
+
+        }
+    })
+    document.addEventListener("keyup",function(e){
+        if(e.key==="Backspace"){
+            decode();
+        }
+    })
+
+
+
+
+
+    
+
+    
+</script>

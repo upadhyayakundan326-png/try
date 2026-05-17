@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" class="input" placeholder="type something">
+<button id="btn">Add</button>
+ <div class="result">
+    <button class="clear">clear</button>
+
+ <h4>
+
+ </h4>
+</div>
+
+    
+</body>
+</html>
+<script>
+   let text= document.querySelector(".input")
+   let res = document.querySelector(".result ")
+    let btn = document.querySelector("#btn")
+   
+      function tasks(){
+        let val= text.value
+        if(val===""){
+            res.innerText=" please enter something"
+        }
+        else{
+           let p = document.createElement("p")
+           p.innerHTML= `${val} <button onclick="remove(this)" class="btn">del</button>`
+           res.appendChild(p)
+           text.value=""
+           
+        }
+      }
+      btn.addEventListener("click", tasks);
+          text.addEventListener("keyup",function(e){
+            if(e.key==="Enter"){
+                tasks();
+            }
+          })
+         function remove(btn){
+            btn.parentElement.remove()
+         
+         }
+         function clearall(){
+            let items=document.querySelectorAll("p")
+            console.log(items)
+            items.forEach((it)=>{
+                it.remove()
+            })
+
+         }
+         let clearbtn=document.querySelector(".clear")
+         clearbtn.addEventListener("click",clearall)
+               
+           document.addEventListener("keyup",function(e){
+           if(e.key.toLowerCase()==="s"){
+            clearall()
+           }})
+</script>

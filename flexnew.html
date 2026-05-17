@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 0px solid black;
+        }
+        .box1{
+            display:none;
+            height: 50px;
+            width: 50px;
+            border:2px,solid,black;
+            
+            
+        }
+        .container{
+            
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 5px;
+            gap:3px;
+
+            margin-bottom: 5px;
+        }
+        .gf{
+            display:none;
+            margin-left:60px;
+            margin-bottom: 30px;
+        }
+         
+    </style>
+
+</head>
+<body> <button class="btn">Load</button>
+    <br>
+
+
+    <div class="container">
+        
+        <div class="box1 gfbox">item1
+            <p class="gf">youre mine love</p>
+        </div>
+        
+    
+        <div class="box1">item2</div>
+        <div class="box1">item3</div>
+        <div class="box1">item4</div>
+        <div class="box1">item5</div>
+    </div>
+    
+</body>
+<script>
+    let btn=document.querySelector(".btn")
+    let gfbox=document.querySelector(".gfbox")
+    let gf=document.querySelector(".gf")
+    let box=document.querySelectorAll(".box1")
+    box.forEach((e)=>{
+
+    })
+    btn.addEventListener("click",function(){
+        box.forEach((e,index)=>{
+        if(index<2){
+            if(e.style.display==="block"){
+            e.style.display="none"
+        } 
+    else{
+        e.style.display="block"
+    }}
+    })
+        
+    });
+     gfbox.addEventListener("click", function(){
+    if(gf.style.display === "block"){
+        gf.style.display = "none";
+    } else {
+        gf.style.display = "block";
+    }
+});
+</script>
+</html>

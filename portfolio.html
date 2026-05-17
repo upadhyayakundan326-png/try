@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>portfolio</title>
+    <style>
+      body{
+        background-color: #0f172a;
+        color:#ffffff ;}
+        .btn{
+          background-color: #ef4444;
+          color: white;
+          padding: 10px 20px;
+           border: none;
+          border-radius: 8px;
+         cursor: pointer;
+
+        }
+        btn:hover{
+          background-color: #dc2626;
+        }
+        .nav{
+          display: flex;
+          margin: 5px 20px;
+          justify-content:left;
+           
+          gap:20px;
+        }
+        ol{
+          text-align: left;
+          display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+       <h3> PERSONAL PORTFOLIO</h3>
+
+       <h4>kundan----</h4>
+       <nav class="nav">
+        
+    <h5>home</h5>
+    <h5>about
+
+    </h5>
+    <h5>projects</h5>
+     <h5>contact</h5>
+        
+       </nav>
+
+    </header>
+    <br>
+    <section>
+        
+      <h3 style="font-style: italic; text-align: center;">Hi,Im Kundan</h3>
+      <p style="text-align: center;"> Hello everyone! myself <strong>kundan upadhyaya.</strong>im a student of <strong>pragjyotish college </strong>and study in 4rth sem.</p>
+      <h4>my skills-----</h4>
+      <ol type="I">
+        <li style="font-weight: 1000;">HTML</li>   
+        <li style="font-weight: 1000;">BASIC CSS</li>
+        <li style="font-weight: 1000;">BASIC JS</li>
+        <li style="font-weight: 1000;">ARRAY FN LOOP</li>
+      </ol>
+      <button class="btn" onclick="contactme()"> contact me</button>
+      <p id="msg"></p>
+      
+
+    </section>
+    <hr>
+
+    <h3>
+       <mark>goal is to become a fullstack dev</mark> 
+    </h3>
+    <hr>
+    <form>
+        <label>name:</label>
+        <input type="text" name="name" value="KUNDAN UPADHYAYA">
+        
+    </form>
+
+    
+    
+    
+</body>
+</html>
+<script>
+  function contactme(){
+  document.getElementById("msg").innerHTML="<p> email:upadhayayakunda326@gmail.com</p>"
+  }
+</script>
